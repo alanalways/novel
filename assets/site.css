@@ -3108,12 +3108,14 @@ body::before {
   }
 
   .volume-entry {
-    grid-template-columns: 1fr;
+    grid-template-columns: 52px 1fr;
+    gap: 12px;
+    align-items: start;
   }
 
   .volume-entry-index {
-    width: 56px;
-    height: 56px;
+    width: 52px;
+    height: 52px;
   }
 
   .volume-entry .ghost-button {
@@ -3309,8 +3311,7 @@ body::before {
   }
 
   .brand-mark {
-    font-size: 0.62rem;
-    letter-spacing: 0.16em;
+    display: none;
   }
 
   .brand-title {
@@ -3482,7 +3483,7 @@ body::before {
   }
 
   .portrait-placeholder {
-    min-height: 280px;
+    min-height: 200px;
   }
 
   .footer-card {
@@ -3670,5 +3671,29 @@ body::before {
   .page-hero-media,
   .reading-banner-media {
     aspect-ratio: 15 / 11;
+  }
+
+  .portrait-placeholder {
+    min-height: 160px;
+  }
+
+  .cover-tile {
+    min-height: 150px;
+  }
+
+  .stat-chip {
+    padding: 12px 14px;
+  }
+
+  .cast-card {
+    padding: 12px;
+  }
+
+  .section-header {
+    margin-bottom: 10px;
+  }
+
+  .info-row {
+    padding: 12px 0;
   }
 }
