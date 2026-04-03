@@ -2984,6 +2984,19 @@ body::before {
   background: rgba(255, 255, 255, 0.02);
 }
 
+a.chapter-card {
+  display: block;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+a.chapter-card:hover,
+a.chapter-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(240, 183, 110, 0.32);
+  background: rgba(240, 183, 110, 0.05);
+  outline: none;
+}
+
 .chapter-card small {
   color: var(--accent);
 }
