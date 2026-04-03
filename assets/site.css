@@ -3532,6 +3532,7 @@ body::before {
     border-radius: 22px;
     padding: 14px;
     transform: translateY(calc(100% + 20px)) scale(0.98);
+    z-index: 50;
   }
 
   .reader-panel.is-open {
