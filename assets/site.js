@@ -40,7 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const root = document.documentElement;
   const prose = document.querySelector(".reading-shell .prose");
   const isReadingPage = Boolean(prose);
+  const mobileQuery = window.matchMedia("(max-width: 760px)");
   document.body.classList.toggle("is-reading-page", isReadingPage);
+  document.body.classList.toggle("is-mobile-ui", mobileQuery.matches);
 
   const prefKey = "jwm-reader-prefs";
   const optionMap = {
@@ -50,10 +52,10 @@ document.addEventListener("DOMContentLoaded", () => {
     lineHeight: [1.9, 2.05, 2.2]
   };
   const defaults = {
-    uiScale: 1,
-    readerFont: 1.12,
-    readerWidth: 980,
-    lineHeight: 2.05,
+    uiScale: mobileQuery.matches ? 0.98 : 1,
+    readerFont: mobileQuery.matches ? 1.1 : 1.12,
+    readerWidth: mobileQuery.matches ? 900 : 980,
+    lineHeight: mobileQuery.matches ? 2.02 : 2.05,
     panelOpen: false
   };
 
@@ -128,16 +130,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const getLabel = (key) => labels[key]?.[prefs[key]] || String(prefs[key]);
 
+  const syncViewportState = () => {
+    document.body.classList.toggle("is-mobile-ui", mobileQuery.matches);
+  };
+
   const createReaderDock = () => {
     const dock = document.createElement("aside");
     dock.className = "reader-dock";
     dock.innerHTML = `
+      <button class="reader-backdrop${prefs.panelOpen ? " is-open" : ""}" type="button" aria-hidden="${prefs.panelOpen ? "false" : "true"}" tabindex="-1"></button>
       <button class="reader-toggle" type="button" aria-expanded="${prefs.panelOpen ? "true" : "false"}" aria-controls="reader-panel">
         <span>Aa</span>
         <span>閱讀設定</span>
       </button>
       <div class="reader-panel${prefs.panelOpen ? " is-open" : ""}" id="reader-panel">
-        <div class="reader-group">
+        <div class="reader-panel-head">
+          <div class="reader-panel-title">
+            <strong>閱讀設定</strong>
+            <small>${isReadingPage ? "正文排版" : "站內介面"}</small>
+          </div>
+          <button class="reader-close" type="button" aria-label="關閉閱讀設定">×</button>
+        </div>
+        <div class="reader-group reader-group-ui">
           <div class="reader-meta">
             <strong>介面字級</strong>
             <small data-label="uiScale"></small>
@@ -148,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
         ${isReadingPage ? `
-          <div class="reader-group">
+          <div class="reader-group reader-group-font">
             <div class="reader-meta">
               <strong>正文字級</strong>
               <small data-label="readerFont"></small>
@@ -158,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <button type="button" data-setting="readerFont" data-step="1">偏大</button>
             </div>
           </div>
-          <div class="reader-group">
+          <div class="reader-group reader-group-width">
             <div class="reader-meta">
               <strong>版心寬度</strong>
               <small data-label="readerWidth"></small>
@@ -168,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <button type="button" data-setting="readerWidth" data-step="1">放寬</button>
             </div>
           </div>
-          <div class="reader-group">
+          <div class="reader-group reader-group-leading">
             <div class="reader-meta">
               <strong>行距</strong>
               <small data-label="lineHeight"></small>
@@ -191,13 +205,29 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       const panel = dock.querySelector(".reader-panel");
+      const backdrop = dock.querySelector(".reader-backdrop");
       const toggle = dock.querySelector(".reader-toggle");
       panel?.classList.toggle("is-open", prefs.panelOpen);
+      backdrop?.classList.toggle("is-open", prefs.panelOpen);
+      backdrop?.setAttribute("aria-hidden", prefs.panelOpen ? "false" : "true");
       toggle?.setAttribute("aria-expanded", prefs.panelOpen ? "true" : "false");
+      document.body.classList.toggle("reader-panel-open", prefs.panelOpen);
     };
 
     dock.querySelector(".reader-toggle")?.addEventListener("click", () => {
       prefs.panelOpen = !prefs.panelOpen;
+      savePrefs();
+      updatePanel();
+    });
+
+    dock.querySelector(".reader-close")?.addEventListener("click", () => {
+      prefs.panelOpen = false;
+      savePrefs();
+      updatePanel();
+    });
+
+    dock.querySelector(".reader-backdrop")?.addEventListener("click", () => {
+      prefs.panelOpen = false;
       savePrefs();
       updatePanel();
     });
@@ -248,6 +278,8 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   applyPrefs();
+  syncViewportState();
   createReaderDock();
   createReadingProgress();
+  mobileQuery.addEventListener?.("change", syncViewportState);
 });
