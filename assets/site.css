@@ -3133,3 +3133,102 @@ body::before {
     padding: 22px 18px 28px;
   }
 }
+
+/* ===== Illustration placements ===== */
+.page-hero-media,
+.reading-banner-media {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.22);
+}
+
+.page-hero-media {
+  margin: 0 0 22px;
+  aspect-ratio: 21 / 8;
+}
+
+.reading-banner-media {
+  margin: 0 0 24px;
+  aspect-ratio: 21 / 7;
+}
+
+.page-hero-media::after,
+.reading-banner-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(7, 11, 15, 0.05), rgba(7, 11, 15, 0.16)),
+    linear-gradient(0deg, rgba(7, 11, 15, 0.18), rgba(7, 11, 15, 0));
+  pointer-events: none;
+}
+
+.page-hero-media img,
+.reading-banner-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.page-hero-media.is-story img {
+  object-position: center 44%;
+}
+
+.page-hero-media.is-world img {
+  object-position: center 50%;
+}
+
+.page-hero-media.is-outline img {
+  object-position: center 56%;
+}
+
+.reading-banner-media.is-v1 img {
+  object-position: center 48%;
+}
+
+.reading-banner-media.is-v2 img {
+  object-position: center 50%;
+}
+
+.reading-banner-media.is-v3 img {
+  object-position: center 46%;
+}
+
+.reading-banner-media.is-v4 img {
+  object-position: center 42%;
+}
+
+.reading-banner-media.is-v5 img {
+  object-position: center 44%;
+}
+
+.portrait-placeholder.has-image img {
+  transition: transform 0.5s ease;
+}
+
+.cast-card:hover .portrait-placeholder.has-image img {
+  transform: scale(1.02);
+}
+
+.portrait-caption small {
+  display: block;
+  margin-top: 4px;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 760px) {
+  .page-hero-media {
+    aspect-ratio: 16 / 10;
+    margin-bottom: 18px;
+  }
+
+  .reading-banner-media {
+    aspect-ratio: 16 / 10;
+    margin-bottom: 18px;
+  }
+}
