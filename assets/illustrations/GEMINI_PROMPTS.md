@@ -1,91 +1,289 @@
-# 《見微知命》Gemini 插畫生成提示
+# 《見微知命》Gemini 插畫生成 Prompt v2
 
-以下 prompt 是為目前 GitHub Pages 網站的深色懸疑小說風格準備，建議輸出 `webp` 或高品質 `png`，解析度至少 `1920px` 寬。整體方向請維持：
+這份版本改成更明確、可直接複製貼給 Gemini 的出圖規格。目標不是做宣傳海報，而是做「小說網站用圖」。
 
-- 繁體中文小說網站用圖
-- 女頻懸疑、近未來都市、微玄學
-- 高級感、文學感、克制，不做動漫海報感
-- 深褐黑、煤黑、霧灰、冷藍、暖金點光
-- 不要任何可讀文字、浮水印、Logo、簽名
-- 不要 Q 版、不要過度血腥、不要廉價賽博朋克 UI
+## 共通規則
 
-## 1. 首頁中段插畫
+以下要求請加在每一張圖的 prompt 最後：
+
+```text
+Traditional Chinese mystery web novel illustration, premium editorial quality, elegant, restrained, emotionally layered, not anime, not chibi, not comic book, not idol poster, not game splash art.
+No text, no letters, no logo, no watermark, no readable signage, no UI overlay, no blood splatter, no cheap cyberpunk neon, no exaggerated fantasy effects, no overexposed lighting.
+Color palette: charcoal black, espresso brown-black, muted blue-gray, cold fog gray, subtle warm gold highlights.
+Lighting: cinematic, low-key, soft contrast, atmospheric depth, premium texture.
+```
+
+建議輸出：
+
+- 角色圖：`4:5`
+- 首頁主視覺：`16:9`
+- 卷首橫幅：`21:9`
+- 角色頁群像：`16:9`
+
+建議檔名：
+
+- `cover-main.webp`
+- `home-signal-ledger.webp`
+- `reader-banner-volume-1.webp`
+- `reader-banner-volume-2.webp`
+- `reader-banner-volume-3.webp`
+- `reader-banner-volume-4.webp`
+- `reader-banner-volume-5.webp`
+- `shen-jianwei.webp`
+- `lu-chenzhou.webp`
+- `jiang-yubai.webp`
+- `qingheng.webp`
+- `zhou-jiming.webp`
+- `lu-jingchuan.webp`
+- `core-cast.webp`
+
+---
+
+## 1. 網站首頁主視覺
+
+建議檔名：`cover-main.webp`
+
+```text
+Create a premium homepage hero illustration for a Taiwanese female mystery novel website.
+Title context: a woman raised in a mountain Taoist temple enters a near-future city and discovers she herself is part of a hidden human experiment.
+Composition: horizontal 16:9, cinematic, with strong center focus and enough negative space for website text overlay.
+Foreground: a worn brass coin, a half-open orphanage ledger, a woman's dark silhouette seen from behind, one hand lightly touching the edge of an old file.
+Midground: a cold modern skyline at night, glass towers, faint traffic lines, fog drifting between buildings.
+Background motif: hidden data lines, subtle archive tabs, a feeling that the city itself is observing people.
+Mood: female-oriented suspense, intelligent, lonely, dangerous, elegant.
+Style: literary editorial illustration, semi-realistic, premium website artwork, textured, refined.
+Do not show readable words or obvious futuristic screens.
+```
+
+---
+
+## 2. 首頁中段圖：銅錢 × 名冊 × 城市
 
 建議檔名：`home-signal-ledger.webp`
 
 ```text
-Create a premium editorial illustration for a dark Taiwanese mystery novel website.
-Theme: a near-future city where a woman's fate has been hidden inside data, old ledgers, and a secret experiment.
-Composition: horizontal 16:9, cinematic mid shot, with generous left and right breathing room for website cropping.
-Main elements: a worn brass coin, an old orphanage ledger, blurred city skyline at night, faint data nodes and signal lines, drifting mist, subtle traces of handwritten marks and archive tabs.
-Mood: elegant, suspenseful, female-oriented mystery, intelligent and emotionally restrained.
-Style: literary editorial illustration, semi-realistic, cinematic, textured, premium novel website artwork, not anime, not comic, not poster design.
-Color palette: charcoal black, deep brown-black, muted blue-gray, warm gold highlights.
-Lighting: dim and moody, with one soft golden focal light and low-contrast atmospheric shadows.
-Negative prompt: no text, no watermark, no logo, no readable numbers, no chibi, no exaggerated sci-fi HUD, no horror gore, no oversaturated neon.
+Create a refined editorial illustration for a dark mystery novel website section.
+Theme: a brass coin, a missing registry, and a city that writes human fate in advance.
+Composition: horizontal 16:9, visual center slightly left, balanced for responsive website cropping.
+Main objects: an old brass coin with worn edges, an opened paper ledger with erased records, layered folders, dim city lights, drifting mist, thin abstract data lines connecting the coin and the city.
+Mood: quiet dread, intelligence, hidden conspiracy, restrained emotion.
+Visual texture: paper grain, dusty air, matte shadows, subtle warm highlights.
+Style: cinematic literary still-life mixed with urban atmosphere, semi-realistic, premium editorial web illustration.
 ```
 
-## 2. 作品介紹頁插畫
+---
 
-建議檔名：`story-machine-memory.webp`
+## 3. 角色頁群像
+
+建議檔名：`core-cast.webp`
 
 ```text
-Create a horizontal editorial illustration for a female mystery thriller novel website.
-Theme: stolen childhood, altered memory, missing registry, and a machine that categorizes children as data.
-Composition: horizontal 3:2, quiet still-life plus abstract narrative layout.
-Main elements: an opened old registry book, pencil circles and erased records, faint medical-white room imagery in the background, delicate data lines floating above paper, sealed archive folders, subtle shadows suggesting hidden surveillance.
-Mood: literary, cold, eerie but not horror, emotionally heavy, intelligent suspense.
-Style: premium mystery editorial illustration, semi-realistic, refined texture, cinematic website artwork, subtle and classy.
-Color palette: coal black, aged paper beige, faded gold, desaturated teal-blue glow.
-Lighting: soft directional light, dusty atmosphere, restrained contrast.
-Negative prompt: no text, no watermark, no visible UI interface, no cheap cyberpunk neon, no blood, no cluttered composition, no anime.
+Create a premium ensemble illustration for a female suspense novel character page.
+Three main figures only.
+Center: a sharp-eyed woman in dark long coat, calm and unreadable.
+Left: a controlled, elegant corporate man in charcoal suit, distant and dangerous.
+Right: a steady detective man in dark coat, watchful and morally grounded.
+They should not look romantic in a direct pose; the tension should feel psychological and unresolved.
+Background: blurred city skyline, archive files, faint gold and teal signal lines, layered shadow.
+Composition: horizontal 16:9, editorial montage, character spacing clear enough for website card use.
+Mood: trust, suspicion, attraction, danger.
+Style: premium literary editorial illustration, semi-realistic, cinematic, restrained, not fashion poster.
 ```
 
-## 3. 正文閱讀器卷首橫幅
+---
 
-建議檔名：`reader-banner-volume.webp`
+## 4. 沈見微角色圖
+
+建議檔名：`shen-jianwei.webp`
 
 ```text
-Create an ultra-wide banner illustration for a dark literary web novel reader.
-Theme: a young woman raised in a mountain Taoist temple is about to walk down into a modern city and a dangerous truth.
-Composition: extra wide 21:9 banner, panoramic, atmospheric, designed for website header use.
-Main elements: misty mountain path, distant Taoist temple silhouette, early dawn fog, faint city lights far below, a lone dark figure descending the path, subtle brass-coin motif hidden in the scene.
-Mood: quiet, ominous, elegant, emotionally restrained, full of anticipation.
-Style: cinematic literary matte painting, premium novel website banner, semi-realistic, textured, not anime, not fantasy poster.
-Color palette: blue-black, fog gray, smoky brown-black, dim warm gold highlights.
-Lighting: soft dawn edge light with layered mist and subtle depth.
-Negative prompt: no text, no logo, no watermark, no fantasy monsters, no bright saturated colors, no front-facing character portrait, no commercial ad look.
+Create a character portrait for Shen Jianwei, the female lead of a Taiwanese mystery novel.
+Age: 26.
+Appearance: slim build, pale skin, dark straight hair slightly below the shoulders, calm almond-shaped eyes, sharp but not aggressive facial features, restrained expression, intelligence visible before emotion.
+Vibe: raised in a mountain Taoist temple, now walking inside a cold modern city; she looks like someone who notices every lie in the room.
+Wardrobe: dark long coat, simple black inner layers, subtle old-fashioned detail such as a brass coin cord, no flashy accessories.
+Pose: half-body or three-quarter portrait, standing still, one hand holding an old file or touching a brass coin, gaze slightly away from camera.
+Background: dark urban night, mist, archive shadows, faint signal lines, suggestion of old paper and hidden records.
+Mood: cold, observant, self-contained, dangerous in a quiet way.
+Style: premium editorial portrait, semi-realistic, cinematic lighting, subtle texture, elegant.
+Ratio: 4:5.
 ```
 
-## 4. 角色頁核心人物群像
+---
 
-建議檔名：`characters-core-cast.webp`
+## 5. 陸沉舟角色圖
+
+建議檔名：`lu-chenzhou.webp`
 
 ```text
-Create a refined ensemble illustration for a female mystery novel website character page.
-Theme: three central figures connected by danger, trust, and hidden history in a near-future city.
-Composition: horizontal 16:9, editorial character montage, balanced spacing for web layout.
-Characters: one calm and sharp-eyed woman in dark clothing, one restrained and powerful corporate man, one steady and watchful detective man. Their relationship should feel tense rather than romantic in a direct way.
-Background elements: faint city skyline, blurred archive files, soft data lines, low-key gold and teal accents.
-Mood: high-tension, elegant, emotionally layered, female-market suspense.
-Style: premium editorial illustration, semi-realistic, cinematic, tasteful, not anime, not idol poster.
-Color palette: charcoal, espresso black, muted teal, smoky gold, pale skin highlights.
-Negative prompt: no text, no watermark, no glossy idol poster look, no exaggerated action poses, no chibi, no comic style.
+Create a character portrait for Lu Chenzhou, the male lead of a female mystery novel.
+Age: 30.
+Appearance: tall and lean, composed posture, clear jawline, deep-set eyes, neat black hair, pale to cool skin tone, expression controlled to the point of danger.
+Vibe: corporate strategist from a powerful technology family, emotionally restrained, always hiding more than he says.
+Wardrobe: dark tailored suit or charcoal shirt with clean lines, luxury without obvious logos, no flamboyant styling.
+Pose: half-body portrait, slightly angled, one hand in pocket or lightly holding confidential documents, looking past the viewer rather than directly smiling.
+Background: dim office glass, blurred city lights, abstract data architecture, faint golden highlights, layered shadow.
+Mood: power, restraint, intelligence, hidden guilt, attraction with threat.
+Style: premium literary editorial portrait, semi-realistic, cinematic, elegant, not romance-cover cliché.
+Ratio: 4:5.
 ```
 
-## 網站替換建議
+---
 
-如果要把現有 SVG 插畫換成 Gemini 圖片，建議優先替換這三個位置：
+## 6. 江逾白角色圖
 
-- `index.html` 的 `Signal / Ledger`
-- `story.html` 的 `Machine / Memory`
-- 各卷正文頁 `reading-banner` 上方或內部加一張超寬卷首圖
+建議檔名：`jiang-yubai.webp`
 
-建議圖片路徑：
+```text
+Create a character portrait for Jiang Yubai, the second male lead of a female suspense novel.
+Age: 29.
+Appearance: tall, athletic but not bulky, clean facial structure, short dark hair, steady eyes, expression gentle on the surface but very firm underneath.
+Vibe: criminal investigator, believes in procedure and evidence, the kind of man who looks dependable before he looks dangerous.
+Wardrobe: dark coat or practical detective-style outerwear, muted shirt, understated and functional.
+Pose: half-body portrait, standing upright, holding a file folder or wearing an earpiece, gaze focused and alert, not theatrical.
+Background: blurred police corridor lights, city night rain, evidence board mood, subtle cool blue-gray atmosphere.
+Mood: trust, caution, moral backbone, quiet emotional pull.
+Style: premium editorial portrait, semi-realistic, cinematic, restrained, grounded realism.
+Ratio: 4:5.
+```
 
-- `./assets/illustrations/home-signal-ledger.webp`
-- `./assets/illustrations/story-machine-memory.webp`
-- `./assets/illustrations/reader-banner-volume.webp`
-- `./assets/illustrations/characters-core-cast.webp`
+---
 
-等你把 Gemini 生成好的檔案丟進來後，我可以直接幫你接到 HTML 與 CSS，替換現在站上的 SVG 動畫插畫。
+## 7. 清衡道長角色圖
+
+建議檔名：`qingheng.webp`
+
+```text
+Create a character portrait for Qingheng, the Taoist guardian figure in a literary suspense novel.
+Age: elderly, around late 60s to 70s.
+Appearance: thin, weathered face, strong bone structure, white-gray hair, composed eyes that have seen too much, not weak despite age.
+Vibe: mountain Taoist who raised the heroine, outwardly plain and quiet, inwardly severe, secretive, and deeply protective.
+Wardrobe: dark blue-gray Taoist robe, worn fabric, simple wooden prayer beads or old cloth belt, no exaggerated fantasy costume.
+Pose: seated or standing near a wooden window, one hand over an old ledger or brass coin, gaze calm and knowing.
+Background: dim temple room, winter light through paper window, incense haze, rough wood texture.
+Mood: sorrow, discipline, hidden truth, parental protectiveness.
+Style: premium literary portrait, semi-realistic, cinematic, textured, emotionally restrained.
+Ratio: 4:5.
+```
+
+---
+
+## 8. 周既明角色圖
+
+建議檔名：`zhou-jiming.webp`
+
+```text
+Create a character portrait for Zhou Jiming, a false-charity antagonist in a female mystery novel.
+Age: mid 40s to early 50s.
+Appearance: polished, refined, well-groomed, warm smile that feels slightly performative, eyes too calm, expensive but tasteful styling.
+Vibe: public philanthropist, private manipulator, a man who packages cruelty as benevolence.
+Wardrobe: elegant dark suit, soft tie, respectable charity-founder image, understated luxury.
+Pose: half-body portrait, one hand lightly touching a document or donation report, posture open and trustworthy on the surface.
+Background: softly lit charity gala or foundation hall, blurred cameras, dim gold light, hints of files and secrecy beneath the polished surface.
+Mood: false warmth, control, hypocrisy, social legitimacy.
+Style: premium editorial portrait, semi-realistic, cinematic, psychologically unsettling without horror.
+Ratio: 4:5.
+```
+
+---
+
+## 9. 陸靖川角色圖
+
+建議檔名：`lu-jingchuan.webp`
+
+```text
+Create a character portrait for Lu Jingchuan, the older patriarch antagonist in a near-future suspense novel.
+Age: late 50s to 60s.
+Appearance: authoritative, neatly kept silver-black hair, composed face, gaze cold and evaluative, a man used to deciding who matters.
+Vibe: old power, corporate dynasty, sees people as systems and assets rather than individuals.
+Wardrobe: impeccable dark formal suit, minimal luxury, patriarchal power presence.
+Pose: seated in a shadowed office or standing before glass windows, one hand on chair arm or folder, no dramatic motion.
+Background: dark executive office, skyline at night, muted reflections in glass, subtle signs of data infrastructure.
+Mood: judgment, control, legacy, calculated menace.
+Style: premium literary editorial portrait, semi-realistic, cinematic, restrained and severe.
+Ratio: 4:5.
+```
+
+---
+
+## 10. 五卷卷首橫幅
+
+### 卷一：入城局
+
+建議檔名：`reader-banner-volume-1.webp`
+
+```text
+Create an ultra-wide 21:9 banner for volume 1 of a female mystery web novel.
+Theme: first descent from the mountain into the city.
+Scene: misty mountain path at dawn, distant Taoist temple silhouette behind, faint city skyline far below, a lone woman descending.
+Mood: beginning, danger, unanswered truth.
+```
+
+### 卷二：名冊幽影
+
+建議檔名：`reader-banner-volume-2.webp`
+
+```text
+Create an ultra-wide 21:9 banner for volume 2 of a female mystery web novel.
+Theme: missing registry and buried childhood records.
+Scene: old paper registry, archive shelves, rain-streaked night city window, fragments of erased names, cold blue fog.
+Mood: pursuit, memory, tightening tension.
+```
+
+### 卷三：司命倒影
+
+建議檔名：`reader-banner-volume-3.webp`
+
+```text
+Create an ultra-wide 21:9 banner for volume 3 of a female mystery web novel.
+Theme: memory distortion, data prediction, and family secrets.
+Scene: mirrored glass, layered city reflections, broken data lines, a dim corporate corridor, distorted archive fragments.
+Mood: fracture, mistrust, revelation.
+```
+
+### 卷四：返山焚卷
+
+建議檔名：`reader-banner-volume-4.webp`
+
+```text
+Create an ultra-wide 21:9 banner for volume 4 of a female mystery web novel.
+Theme: return to the mountain, hidden tunnels, and burned records.
+Scene: mountain rain at night, closed temple gate, old tunnel entrance, drifting ash, one dim warm light in deep darkness.
+Mood: confrontation, grief, truth surfacing.
+```
+
+### 卷五：終局審判
+
+建議檔名：`reader-banner-volume-5.webp`
+
+```text
+Create an ultra-wide 21:9 banner for volume 5 of a female mystery web novel.
+Theme: public exposure, final judgment, and rewriting fate.
+Scene: city skyline before dawn, dark server room glow, courtroom-like seriousness, scattered documents, one strong line of warm light cutting through the dark.
+Mood: reckoning, resolve, costly victory.
+```
+
+---
+
+## 11. 圖片接站建議
+
+當你把 Gemini 生好的圖片放進來後，我建議這樣對應：
+
+- 首頁主視覺：`assets/illustrations/cover-main.webp`
+- 首頁中段圖：`assets/illustrations/home-signal-ledger.webp`
+- 角色頁：
+  - `assets/illustrations/shen-jianwei.webp`
+  - `assets/illustrations/lu-chenzhou.webp`
+  - `assets/illustrations/jiang-yubai.webp`
+  - `assets/illustrations/qingheng.webp`
+  - `assets/illustrations/zhou-jiming.webp`
+  - `assets/illustrations/lu-jingchuan.webp`
+- 群像：`assets/illustrations/core-cast.webp`
+- 各卷卷首：
+  - `assets/illustrations/reader-banner-volume-1.webp`
+  - `assets/illustrations/reader-banner-volume-2.webp`
+  - `assets/illustrations/reader-banner-volume-3.webp`
+  - `assets/illustrations/reader-banner-volume-4.webp`
+  - `assets/illustrations/reader-banner-volume-5.webp`
+
+你把圖給我之後，我可以直接把首頁、角色頁、各卷正文頁全部接上，不需要你再手動排版。
