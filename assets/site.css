@@ -1677,3 +1677,316 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== Readability + Illustration Refresh ===== */
+
+body {
+  font-size: 17px;
+}
+
+.brand-name,
+.brand-title {
+  font-size: 1.22rem;
+}
+
+.nav a,
+.site-nav a {
+  font-size: 0.98rem;
+}
+
+h1 {
+  font-size: clamp(2.6rem, 5.4vw, 5.2rem);
+  line-height: 1.12;
+}
+
+.hero-lead,
+.section-desc,
+.callout p,
+.timeline-item p,
+.footer-card p,
+.card p,
+.volume-card p,
+.relationship-row p,
+.copy p,
+.article p,
+.article li {
+  font-size: 1.04rem;
+}
+
+.character-card p,
+.character-block p {
+  font-size: 1rem;
+}
+
+.story p {
+  font-size: 1.08rem;
+  line-height: 2.06;
+}
+
+.reading-banner p,
+.chapter-header p,
+.chapter-card p {
+  font-size: 1rem;
+}
+
+.prose .chapter > p {
+  font-size: 1.12rem;
+  line-height: 2.08;
+}
+
+.chapter-header h2 {
+  font-size: clamp(2.1rem, 3.4vw, 2.8rem);
+}
+
+.art-section {
+  margin-top: 34px;
+}
+
+.art-panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: 24px;
+  align-items: center;
+  overflow: hidden;
+  padding: 30px;
+  border: 1px solid rgba(240, 183, 110, 0.14);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(240, 183, 110, 0.12), transparent 26%),
+    radial-gradient(circle at 90% 10%, rgba(125, 196, 216, 0.14), transparent 28%),
+    linear-gradient(145deg, rgba(8, 18, 28, 0.96), rgba(5, 10, 15, 0.98));
+  box-shadow: var(--shadow);
+  isolation: isolate;
+  animation: riseFade 0.9s ease both;
+}
+
+.art-panel::before {
+  content: "";
+  position: absolute;
+  inset: auto -10% -30% auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(240, 183, 110, 0.14), transparent 70%);
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.art-copy {
+  display: grid;
+  gap: 14px;
+}
+
+.art-copy p {
+  margin: 0;
+  max-inline-size: 42ic;
+  color: var(--muted);
+  font-size: 1.03rem;
+  line-height: 1.95;
+}
+
+.art-stage {
+  position: relative;
+  min-height: 310px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.art-stage::after {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 16%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(125, 196, 216, 0.42), transparent);
+  animation: scanLine 7.2s linear infinite;
+  opacity: 0.8;
+}
+
+.mystery-illustration {
+  width: min(100%, 520px);
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 20px 36px rgba(0, 0, 0, 0.3));
+}
+
+.mystery-illustration .halo {
+  transform-origin: center;
+  animation: haloPulse 5.6s ease-in-out infinite;
+}
+
+.mystery-illustration .float {
+  transform-origin: center;
+  animation: softFloat 8s ease-in-out infinite;
+}
+
+.mystery-illustration .float-delayed {
+  transform-origin: center;
+  animation: softFloat 9.5s ease-in-out infinite 0.8s;
+}
+
+.mystery-illustration .line-dash {
+  stroke-dasharray: 10 12;
+  animation: dashFlow 11s linear infinite;
+}
+
+.mystery-illustration .pulse {
+  transform-origin: center;
+  animation: nodePulse 3.8s ease-in-out infinite;
+}
+
+.mystery-illustration .pulse-delayed {
+  transform-origin: center;
+  animation: nodePulse 4.8s ease-in-out infinite 1s;
+}
+
+.mystery-illustration .glow {
+  animation: softBlink 4.2s ease-in-out infinite;
+}
+
+.mystery-illustration.is-ledger .float {
+  animation-duration: 10s;
+}
+
+.mystery-illustration.is-ledger .line-dash {
+  animation-duration: 13s;
+}
+
+.hero-card,
+.quote-panel {
+  animation: riseFade 0.85s ease both;
+}
+
+@keyframes riseFade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes softFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.015);
+  }
+}
+
+@keyframes haloPulse {
+  0%,
+  100% {
+    transform: scale(0.96);
+    opacity: 0.46;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 0.85;
+  }
+}
+
+@keyframes nodePulse {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes dashFlow {
+  to {
+    stroke-dashoffset: -120;
+  }
+}
+
+@keyframes scanLine {
+  0% {
+    transform: translateY(0);
+    opacity: 0.15;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  45% {
+    transform: translateY(220px);
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateY(220px);
+    opacity: 0;
+  }
+}
+
+@keyframes softBlink {
+  0%,
+  100% {
+    opacity: 0.72;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 960px) {
+  .art-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .art-stage {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 760px) {
+  body {
+    font-size: 16px;
+  }
+
+  .hero-lead,
+  .section-desc,
+  .callout p,
+  .timeline-item p,
+  .footer-card p,
+  .card p,
+  .volume-card p,
+  .relationship-row p,
+  .copy p,
+  .article p,
+  .article li,
+  .story p,
+  .prose .chapter > p {
+    font-size: 1rem;
+  }
+
+  .art-panel {
+    padding: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .art-panel,
+  .hero-card,
+  .quote-panel,
+  .mystery-illustration .halo,
+  .mystery-illustration .float,
+  .mystery-illustration .float-delayed,
+  .mystery-illustration .line-dash,
+  .mystery-illustration .pulse,
+  .mystery-illustration .pulse-delayed,
+  .mystery-illustration .glow,
+  .art-stage::after {
+    animation: none !important;
+  }
+}
